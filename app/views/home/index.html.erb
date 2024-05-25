@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<p>Signed as <%= Current.user.phone %></p>
+
+<h2>Login and verification</h2>
+
+<h2>Access history</h2>
+
+<div>
+  <%= link_to "Devices & Sessions", sessions_path %>
+</div>
+
+<br>
+
+<%= button_to "Log out", Current.session, method: :delete %>

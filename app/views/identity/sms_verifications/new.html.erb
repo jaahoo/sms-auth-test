@@ -1,0 +1,11 @@
+<h1>Verify OTP</h1>
+<%= form_with(url: identity_sms_verifications_path) do |form| %>
+  <%= hidden_field_tag :sid, params[:sid] %>
+  <div>
+    <%= form.label :otp_code %>
+    <%= form.text_field :otp_code %>
+  </div>
+  <div>
+    <%= form.submit "Verify" %>
+  </div>
+<% end %>

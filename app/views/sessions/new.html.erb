@@ -1,0 +1,10 @@
+<h1>Login</h1>
+<%= form_with(url: sign_in_path) do |form| %>
+  <div>
+    <%= form.label :phone_number %>
+    <%= form.text_field :phone_number %>
+  </div>
+  <div>
+    <%= form.submit "Send SMS code" %>
+  </div>
+<% end %>

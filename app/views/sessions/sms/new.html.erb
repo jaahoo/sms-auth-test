@@ -1,0 +1,15 @@
+<h1>Login OTP</h1>
+<%= form_with(url: sessions_sms_path) do |form| %>
+  <%= hidden_field_tag :sid, params[:sid] %>
+  <div>
+    <%= form.label :otp_code %>
+    <%= form.text_field :otp_code %>
+  </div>
+  <div>
+    <%= form.submit "Login" %>
+  </div>
+<% end %>
+
+<div>
+  Didn't receive the SMS? Let's <%= link_to 'try again', sign_in_path %>.
+</div>
