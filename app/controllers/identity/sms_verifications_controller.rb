@@ -14,5 +14,7 @@ class Identity::SmsVerificationsController < ApplicationController
       flash.now[:alert] = 'Invalid OTP code'
       render :new, status: :unprocessable_entity
     end
+  rescue ActiveSupport::MessageVerifier::InvalidSignature
+    redirect_to sign_in_path, notice: 'Please try it again'
   end
 end
